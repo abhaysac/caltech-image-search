@@ -31,6 +31,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
   //load ivfile
   ivFile* ivfile = new ivFile;
   ivfile->load(filename);
+//  ivfile->display();
   
   //return pointer to ivFile
   mxArray* ret = mxCreateNumericMatrix(1,1,mxINDEX_CLASS,mxREAL);
@@ -38,7 +39,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
   plhs[0] = ret;
   
   //print it out
-  ivfile->display();
+  //ivfile->display();
 //  //clear
 //  delete ivfile;
 }

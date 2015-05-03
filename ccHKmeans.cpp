@@ -10,6 +10,7 @@
 #include <ctime>
 #include <string>
 #include <algorithm>
+#include <limits>
 
 #include "ccCommon.hpp"
 #include "ccHKmeans.hpp"

@@ -23,7 +23,7 @@ if ~exist('type','var') || isempty(type), type = 'mt19937ar'; end;
 
 switch op
   case 'set'
-    old = RandStream.setDefaultStream(RandStream.create(type,'Seed',seed));
-  case 'resotre'
-    RandStream.setDefaultStream(seed);
+    old = RandStream.setGlobalStream(RandStream.create(type,'Seed',seed));
+  case 'restore'
+    RandStream.setGlobalStream(seed);
 end;
