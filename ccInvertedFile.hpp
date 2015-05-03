@@ -30,10 +30,10 @@ typedef unsigned long ulong;
 class ivWordDoc
 {
 public:
-  //number of time this word appears
-  int count;
   //weighted value
   float val;
+  //number of time this word appears
+  int count;
   //document id
   uint doc;
   

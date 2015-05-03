@@ -567,11 +567,13 @@ ostream& operator<<(ostream& os, ivWordDoc& ivwd)
 {
   os.write((char*)&ivwd.count, sizeof(ivwd.count));
   os.write((char*)&ivwd.doc, sizeof(ivwd.doc));
+//  os.write((char*)&ivwd.val, sizeof(ivwd.val));
 }
 istream& operator>>(istream& is, ivWordDoc& ivwd)
 {
   is.read((char*)&ivwd.count, sizeof(ivwd.count));
   is.read((char*)&ivwd.doc, sizeof(ivwd.doc));
+//  is.read((char*)&ivwd.val, sizeof(ivwd.val));
 }
 
 //------------------------------------------------------------------------
@@ -661,8 +663,8 @@ void ivFile::save(string filename)
 {
   //open the file for opening
   ofstream of;
-  of.open(filename.c_str(), ios_base::binary);
-  
+  of.open(filename.c_str(), ios::binary | ios::out);
+
   //save
   of << *this;
   
@@ -676,7 +678,7 @@ void ivFile::load(string filename)
 {
   //open the file for opening
   ifstream inf;
-  inf.open(filename.c_str(), ofstream::binary);
+  inf.open(filename.c_str(), ifstream::binary | ios::in);
   
   inf >> *this;
   

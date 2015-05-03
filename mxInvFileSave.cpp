@@ -6,7 +6,7 @@
 #include <string>
 #include <cassert>
 #include <cstring>
-#include <climits>
+#include <limits>
 #include "ccInvertedFile.hpp"
 
                                            
@@ -33,6 +33,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
   
   //save ivfile
   ivFile* ivfile = *(ivFile**)mxGetData(ivfileIn);
+//  ivfile->display();
   ivfile->save(filename);  
 }
 
